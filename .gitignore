@@ -1,0 +1,9 @@
+# ignore .env file
+.env
+
+# ignore PyCharm config files
+.idea/
+
+# ignore Python bytecode files
+__pycache__/
+*.pyc
