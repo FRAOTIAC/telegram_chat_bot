@@ -1,6 +1,15 @@
 # Telegram Chat Bot
 
 Telegram Chat Bot is an open source project that allows users to chat with an AI-powered chatbot in their Telegram app. This repository contains a Python script that uses the ChatGPT API to generate intelligent responses to user queries.
+Inspiration comes from these two repositories: n3d1117/chatgpt-telegram-bot and karfly/chatgpt_telegram_bot.
+
+## Features
+1. Automatically Forget Earliest Messages When Message Length Exceeds Limit
+With this feature, if a message exceeds a certain length limit, the system will automatically forget the earliest messages to make room for new messages. This can help prevent the system from becoming overloaded with too much data, which can affect its performance.
+
+2. Adding Multiple Modes, Including Assistant and DAN modes
+This feature allows users to switch between different modes depending on their needs. For example, an "assistant" mode could be designed to provide helpful suggestions and guidance, while various "dan" modes could be tailored to different conversation styles and personalities. By offering multiple modes, the system can provide a more personalized and engaging experience for users.
+
 
 ## Getting Started
 
@@ -29,4 +38,4 @@ We would like to acknowledge the assistance of the ChatGPT AI language model in 
 
 ## References
 [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)
-
+[]()

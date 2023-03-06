@@ -141,7 +141,7 @@ class TelegramBot:
             )
 
     @restricted
-    async def send_message(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async def send_message(self, update: Update, context: CallbackContext):
         '''
         Send message to chatGPT
         :param update:
@@ -150,18 +150,19 @@ class TelegramBot:
         '''
         logging.info(f'New message from user')
         chat_id = update.effective_chat.id
+        logging.info(f'send_message from user: {chat_id}')
 
         await update.message.chat.send_action(action="typing")
 
-        answer = self.openai.get_answers(message=update.message.text, chat_id=chat_id)
+        answer = self.openai.get_answers(message=update.message.text, chat_id=chat_id, chat_mode=self.modes[chat_id])
         logging.info(f'sending message.')
         await update.message.chat.send_action(action="typing")
 
         try:
-            await update.message.reply_text(answer, parse_mode=ParseMode.MARKDOWN_V2)
+            await update.message.reply_text(answer, quote=True, parse_mode=ParseMode.MARKDOWN_V2)
         except telegram.error.BadRequest:
             # answer has invalid characters, so we send it without parse_mode
-            await update.message.reply_text(answer)
+            await update.message.reply_text(answer, quote=True)
 
     async def error_handler(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         '''
@@ -180,12 +181,12 @@ class TelegramBot:
         for chat_mode, chat_mode_dict in openai_helper.CHAT_MODES.items():
             keyboard.append([InlineKeyboardButton(chat_mode_dict["name"], callback_data=f"set_chat_mode|{chat_mode}")])
         reply_markup = InlineKeyboardMarkup(keyboard)
-        logging.info(f'reply_markup ： {reply_markup}')
         await update.message.reply_text("Select chat mode:", reply_markup=reply_markup)
 
     @restricted
     async def set_chat_mode_handle(self, update: Update, context: CallbackContext):
         user_id = update.callback_query.from_user.id
+        logging.info(f'set_chat_mode_handle with user: {user_id}')
 
         query = update.callback_query
         await query.answer()
