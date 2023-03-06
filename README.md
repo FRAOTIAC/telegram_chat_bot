@@ -1,6 +1,6 @@
-# Telegram Chat Bot
+# Telegram ChatGPT Bot
 
-Telegram Chat Bot is an open source project that allows users to chat with an AI-powered chatbot in their Telegram app. This repository contains a Python script that uses the ChatGPT API to generate intelligent responses to user queries.
+Telegram ChatGPT Bot is an open source project that allows users to chat with an AI-powered chatbot in their Telegram app. This repository contains a Python script that uses the ChatGPT API to generate intelligent responses to user queries.
 Inspiration comes from these two repositories: n3d1117/chatgpt-telegram-bot and karfly/chatgpt_telegram_bot.
 
 ## Features
@@ -13,7 +13,7 @@ This feature allows users to switch between different modes depending on their n
 
 ## Getting Started
 
-To use the Telegram Chat Bot, there are two options:
+To use the Telegram ChatGPT Bot, there are two options:
 
 1. **Run locally:** Clone this repository to your local machine, install the required dependencies by running `pip install -r requirements.txt`, and create a `.env` file based on the `.env.example` file included in the repository. Edit the `.env` file with your bot token and ChatGPT API key. Then, run the `main.py` script to start the bot.
 
@@ -27,11 +27,11 @@ To chat with the bot, simply send a message to the bot in Telegram. The bot will
 
 ## Contributing
 
-Telegram Chat Bot is an open source project, and contributions are welcome! If you'd like to contribute, please create a pull request with your changes.
+Telegram ChatGPT Bot is an open source project, and contributions are welcome! If you'd like to contribute, please create a pull request with your changes.
 
 ## License
 
-Telegram Chat Bot is released under the MIT License. See [LICENSE](https://opensource.org/license/mit/) for details.
+Telegram ChatGPT Bot is released under the MIT License. See [LICENSE](https://opensource.org/license/mit/) for details.
 
 ## Claims
 We would like to acknowledge the assistance of the ChatGPT AI language model in writing this README file. The ChatGPT API was used to generate intelligent responses to user queries.
